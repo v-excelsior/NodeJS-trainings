@@ -1,5 +1,7 @@
 const http = require("http");
 const os = require("os");
+const myModule = require('./welcome')
+
 
 http.createServer(function (request, response) {
     response.end("Hello NodeJS!");
@@ -7,5 +9,10 @@ http.createServer(function (request, response) {
     console.log("Сервер начал прослушивание запросов на порту 3000");
 });
 
-let userName = os.userInfo().username;
-console.log(userName);
+for (let prop in os.userInfo()) {
+    console.log(os.userInfo()[prop]);
+}
+
+console.log(os.totalmem())
+
+console.log(myModule.getMessage())
