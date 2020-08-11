@@ -4,9 +4,10 @@ const myModule = require('./welcome')
 
 console.log(global.name)
 
-const word = process.argv[0];
-const numberOfDeleteLetter = process.argv[0];
+const word = process.argv[2]
+const numberOfLetter = process.argv[3]
 
+console.log(word[numberOfLetter - 1])
 
 http.createServer(function (request, response) {
     response.end('Hello NodeJS!')
